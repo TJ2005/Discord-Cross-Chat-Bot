@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 from replit import db
 
+#Host this bot on replit for optimal execution
+
+'''pls enter the words to be blacklisted in the list below'''
 filt = ["PLS ENTER ALL THE WORDS TO BE BLACKLISTED HERE!!!!!!!"]
 bot = commands.Bot(command_prefix = ">>>")
 Channel_IDS = []

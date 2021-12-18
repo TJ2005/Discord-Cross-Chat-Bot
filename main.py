@@ -11,9 +11,6 @@ Channel_IDS = db["Channels"]
 async def on_ready():
   print("logged in as "+str(bot.user))
 
-YES = ["Yes","yes","YES"]
-NO = ["No","no","NO"]
-
 @bot.event  
 async def on_guild_channel_create(channel):
   #channel = discord.utils.get(channel.guild.channels, name='channel name')
@@ -38,7 +35,7 @@ async def on_message(message):
     if message.channel.id in Channel_IDS:
       print("message received"+str(message.content))
       for chann in Channel_IDS:
-        if chann == message.channel.id or message.content in filt or "@everyone" in message.content or "@here" in message.content:
+        if chann == message.channel.id or filt in message.content or "@everyone" in message.content or "@here" in message.content:
           continue
         await bot.get_channel(chann).send("**"+str(message.author)+"**  :globe_with_meridians: " + str(message.content))
         print("message sent" +str(message.content))
